@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>เฉลยใบงาน (สำหรับครู) — แผนกวิชาช่างเทคนิคคอมพิวเตอร์</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="toolbar">
+    <h1>เฉลยใบงาน (สำหรับครู)</h1>
+    <select id="subject-select">
+      <option value="">-- เลือกวิชา --</option>
+    </select>
+    <select id="week-select" disabled>
+      <option value="">-- เลือกสัปดาห์ --</option>
+    </select>
+    <button id="print-btn" disabled>พิมพ์เฉลย</button>
+  </header>
+
+  <main>
+    <div id="worksheet-container" class="placeholder">
+      เลือกวิชาและสัปดาห์เพื่อดูเฉลย
+    </div>
+  </main>
+
+  <script src="js/render.js"></script>
+  <script src="js/teacher.js"></script>
+</body>
+</html>
