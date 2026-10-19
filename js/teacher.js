@@ -1,9 +1,11 @@
 (function () {
+  var termSelect = document.getElementById("term-select");
   var subjectSelect = document.getElementById("subject-select");
   var weekSelect = document.getElementById("week-select");
   var printBtn = document.getElementById("print-btn");
   var main = document.getElementById("worksheet-container");
 
+  var allSubjects = [];
   var subjects = [];
 
   function pad(n) {
@@ -16,20 +18,32 @@
     printBtn.disabled = true;
   }
 
+  function populateSubjects() {
+    subjectSelect.innerHTML = '<option value="">-- เลือกวิชา --</option>';
+    subjects = allSubjects.filter(function (s) {
+      return s.terms && s.terms.indexOf(termSelect.value) !== -1;
+    });
+    subjects.forEach(function (s) {
+      var opt = document.createElement("option");
+      opt.value = s.code;
+      opt.textContent = s.code + " " + s.name;
+      subjectSelect.appendChild(opt);
+    });
+    subjectSelect.disabled = false;
+    weekSelect.value = "";
+    weekSelect.disabled = true;
+    weekSelect.innerHTML = '<option value="">-- เลือกสัปดาห์ --</option>';
+    showPlaceholder("เลือกวิชาและสัปดาห์เพื่อดูเฉลย");
+  }
+
   function loadSubjects() {
     fetch("data/subjects.json")
       .then(function (res) {
         return res.json();
       })
       .then(function (data) {
-        subjects = data;
-        subjects.forEach(function (s) {
-          var opt = document.createElement("option");
-          opt.value = s.code;
-          opt.textContent = s.code + " " + s.name;
-          subjectSelect.appendChild(opt);
-        });
-        subjectSelect.disabled = false;
+        allSubjects = data;
+        populateSubjects();
       })
       .catch(function () {
         showPlaceholder("โหลดรายชื่อวิชาไม่สำเร็จ");
@@ -77,6 +91,10 @@
         showPlaceholder("ใบงานสัปดาห์นี้ยังไม่พร้อมใช้งาน");
       });
   }
+
+  termSelect.addEventListener("change", function () {
+    populateSubjects();
+  });
 
   subjectSelect.addEventListener("change", function () {
     weekSelect.value = "";

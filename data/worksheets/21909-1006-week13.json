@@ -1,0 +1,46 @@
+{
+  "subjectCode": "21909-1006",
+  "subjectName": "พื้นฐานการสร้างเว็บไซต์",
+  "week": 13,
+  "title": "การเขียน JavaScript โต้ตอบผู้ใช้เบื้องต้น",
+  "objectives": [
+    "ใช้คำสั่ง document.getElementById() เพื่อเข้าถึงองค์ประกอบ HTML ได้",
+    "ตอบสนองเหตุการณ์ (Event) เช่น การคลิกปุ่มด้วย JavaScript ได้",
+    "เปลี่ยนแปลงเนื้อหาและรูปแบบของหน้าเว็บผ่าน DOM ได้"
+  ],
+  "content": "DOM (Document Object Model) คือโครงสร้างข้อมูลที่เบราว์เซอร์สร้างขึ้นจากเอกสาร HTML โดยมองทุกแท็กเป็น \"อ็อบเจกต์\" ที่ JavaScript สามารถเข้าถึงและเปลี่ยนแปลงได้ การเข้าถึงองค์ประกอบ HTML ที่นิยมที่สุดคือ document.getElementById(\"id\") ซึ่งคืนค่าองค์ประกอบที่มี id ตรงกับที่ระบุ เช่น\nconst title = document.getElementById(\"myTitle\");\n\nเมื่อได้องค์ประกอบมาแล้ว สามารถเปลี่ยนเนื้อหาข้อความได้ด้วยคุณสมบัติ innerHTML หรือ textContent เช่น title.innerHTML = \"หัวข้อใหม่\"; และสามารถเปลี่ยนรูปแบบ CSS ได้ผ่านคุณสมบัติ style เช่น title.style.color = \"red\";\n\nเหตุการณ์ (Event) คือการกระทำของผู้ใช้ เช่น การคลิก (click) การพิมพ์ (input) หรือการส่งฟอร์ม (submit) การตอบสนองเหตุการณ์ทำได้โดยกำหนดฟังก์ชันให้ทำงานเมื่อเหตุการณ์เกิดขึ้น เช่น ใช้แอตทริบิวต์ onclick ในแท็ก HTML โดยตรง\n<button onclick=\"sayHello()\">คลิกที่นี่</button>\nหรือใช้เมธอด addEventListener() ในไฟล์ JavaScript ซึ่งเป็นวิธีที่แนะนำเพราะแยกโค้ด HTML กับ JavaScript ออกจากกัน\ndocument.getElementById(\"btn\").addEventListener(\"click\", function() {\n  alert(\"สวัสดี!\");\n});\n\nตัวอย่างโปรแกรมที่สมบูรณ์: เมื่อคลิกปุ่มแล้วเปลี่ยนข้อความในหน้าเว็บ\n<p id=\"msg\">ยังไม่ได้คลิก</p>\n<button id=\"btn\">คลิก</button>\n<script>\ndocument.getElementById(\"btn\").addEventListener(\"click\", function() {\n  document.getElementById(\"msg\").innerHTML = \"คุณคลิกแล้ว!\";\n});\n</script>\nการผสานความรู้เรื่อง DOM และ Event นี้เป็นพื้นฐานสำคัญของการสร้างเว็บไซต์ที่โต้ตอบกับผู้ใช้ได้จริง",
+  "questions": [
+    {
+      "type": "short",
+      "prompt": "DOM คืออะไร และเกี่ยวข้องกับ JavaScript อย่างไร"
+    },
+    {
+      "type": "fill",
+      "prompt": "คำสั่งที่ใช้เข้าถึงองค์ประกอบ HTML ด้วย id คือ document.______(\"id\")"
+    },
+    {
+      "type": "short",
+      "prompt": "innerHTML และ style ของ DOM element ใช้ทำอะไร"
+    },
+    {
+      "type": "fill",
+      "prompt": "เมธอดที่แนะนำให้ใช้ดักจับเหตุการณ์เพราะแยกโค้ด HTML กับ JavaScript ออกจากกันคือ ______"
+    },
+    {
+      "type": "list",
+      "prompt": "ยกตัวอย่างเหตุการณ์ (Event) ของ JavaScript มาอย่างน้อย 3 ประเภท"
+    },
+    {
+      "type": "applied",
+      "prompt": "เขียนโค้ด HTML และ JavaScript ที่มีปุ่ม id=\"btnChange\" เมื่อคลิกแล้วเปลี่ยนสีพื้นหลังของ <body> เป็นสีฟ้า"
+    }
+  ],
+  "answerKey": [
+    "DOM คือโครงสร้างข้อมูลที่เบราว์เซอร์สร้างจากเอกสาร HTML โดยมองทุกแท็กเป็นอ็อบเจกต์ JavaScript ใช้ DOM ในการเข้าถึงและเปลี่ยนแปลงเนื้อหา/รูปแบบของหน้าเว็บ",
+    "getElementById",
+    "innerHTML ใช้เปลี่ยนเนื้อหา HTML ภายในองค์ประกอบ ส่วน style ใช้เปลี่ยนรูปแบบ CSS ขององค์ประกอบนั้นผ่าน JavaScript",
+    "addEventListener()",
+    "click (คลิก), input (พิมพ์/เปลี่ยนค่า), submit (ส่งฟอร์ม) — ตัวอย่างอื่นที่ถูกต้องได้ เช่น mouseover, keydown",
+    "<button id=\"btnChange\">เปลี่ยนสี</button>\n<script>\ndocument.getElementById(\"btnChange\").addEventListener(\"click\", function() {\n  document.body.style.backgroundColor = \"skyblue\";\n});\n</script>"
+  ]
+}

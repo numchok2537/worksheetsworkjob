@@ -3,36 +3,84 @@
     "code": "20000-2007",
     "name": "กิจกรรมในสถานประกอบการ 1",
     "type": "log",
-    "totalWeeks": 18
+    "totalWeeks": 18,
+    "terms": ["1/2569"]
   },
   {
     "code": "20001-1005",
     "name": "การใช้เทคโนโลยีดิจิทัลเพื่ออาชีพ",
     "type": "lesson",
-    "totalWeeks": 18
+    "totalWeeks": 18,
+    "terms": ["1/2569", "2/2569"]
   },
   {
     "code": "21909-1009",
     "name": "ระบบเครือข่ายคอมพิวเตอร์",
     "type": "lesson",
-    "totalWeeks": 18
+    "totalWeeks": 18,
+    "terms": ["1/2569"]
   },
   {
     "code": "21909-2017",
     "name": "โปรแกรมสำนักงาน",
     "type": "lesson",
-    "totalWeeks": 18
+    "totalWeeks": 18,
+    "terms": ["1/2569"]
   },
   {
     "code": "21909-2018",
     "name": "เทคโนโลยีอากาศยานไร้คนขับ",
     "type": "lesson",
-    "totalWeeks": 18
+    "totalWeeks": 18,
+    "terms": ["1/2569"]
   },
   {
     "code": "21909-2019",
     "name": "การใช้โปรแกรมคอมพิวเตอร์กราฟิก",
     "type": "lesson",
-    "totalWeeks": 18
+    "totalWeeks": 18,
+    "terms": ["1/2569"]
+  },
+  {
+    "code": "20000-2005",
+    "name": "กิจกรรมองค์การวิชาชีพ 2",
+    "type": "log",
+    "totalWeeks": 18,
+    "terms": ["2/2569"]
+  },
+  {
+    "code": "21909-1006",
+    "name": "พื้นฐานการสร้างเว็บไซต์",
+    "type": "lesson",
+    "totalWeeks": 18,
+    "terms": ["2/2569"]
+  },
+  {
+    "code": "21909-1011",
+    "name": "คณิตศาสตร์คอมพิวเตอร์",
+    "type": "lesson",
+    "totalWeeks": 18,
+    "terms": ["2/2569"]
+  },
+  {
+    "code": "21909-2013",
+    "name": "การใช้งานโปรแกรมระบบเครือข่ายคอมพิวเตอร์",
+    "type": "lesson",
+    "totalWeeks": 18,
+    "terms": ["2/2569"]
+  },
+  {
+    "code": "21909-2015",
+    "name": "การตัดต่อระบบเสียงและภาพด้วยปัญญาประดิษฐ์",
+    "type": "lesson",
+    "totalWeeks": 18,
+    "terms": ["2/2569"]
+  },
+  {
+    "code": "21909-2021",
+    "name": "งานบริการระบบคอมพิวเตอร์และ IoT",
+    "type": "lesson",
+    "totalWeeks": 18,
+    "terms": ["2/2569"]
   }
 ]

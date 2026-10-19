@@ -1,0 +1,46 @@
+{
+  "subjectCode": "21909-1006",
+  "subjectName": "พื้นฐานการสร้างเว็บไซต์",
+  "week": 8,
+  "title": "การตกแต่งข้อความและเลย์เอาต์ด้วย CSS",
+  "objectives": [
+    "ใช้คุณสมบัติ CSS จัดรูปแบบตัวอักษรและข้อความได้",
+    "อธิบายหลักการของ Box Model ใน CSS ได้",
+    "จัดเลย์เอาต์หน้าเว็บด้วย Flexbox เบื้องต้นได้"
+  ],
+  "content": "การตกแต่งข้อความด้วย CSS ใช้คุณสมบัติหลัก เช่น font-family กำหนดรูปแบบตัวอักษร font-size กำหนดขนาด font-weight กำหนดความหนา (เช่น bold) text-align กำหนดการจัดวาง (left, center, right) line-height กำหนดระยะห่างระหว่างบรรทัด และ text-decoration กำหนดเส้นขีด เช่น underline หรือ none (ใช้ลบเส้นใต้ลิงก์)\n\nBox Model คือแนวคิดสำคัญของ CSS ที่มองทุกองค์ประกอบ HTML เป็นกล่องสี่เหลี่ยม ประกอบด้วย 4 ชั้นจากในสู่นอก คือ Content (เนื้อหา) กำหนดด้วย width/height, Padding (ระยะห่างภายใน) ระหว่างเนื้อหากับขอบ, Border (เส้นขอบ) กำหนดด้วย border: 1px solid black; และ Margin (ระยะห่างภายนอก) ระหว่างกล่องกับองค์ประกอบข้างเคียง การเข้าใจ Box Model ช่วยคำนวณขนาดจริงขององค์ประกอบบนหน้าเว็บได้ถูกต้อง\n\nFlexbox คือระบบจัดเลย์เอาต์ของ CSS ที่ช่วยจัดเรียงองค์ประกอบในแนวนอนหรือแนวตั้งได้ง่าย เริ่มต้นด้วยการกำหนด display: flex; ให้กับองค์ประกอบแม่ (Container) จากนั้นองค์ประกอบลูก (Item) จะเรียงต่อกันอัตโนมัติ สามารถกำหนด justify-content เพื่อจัดตำแหน่งแนวนอน (เช่น center, space-between) และ align-items เพื่อจัดตำแหน่งแนวตั้ง (เช่น center)\n\nตัวอย่าง:\n.container {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\nFlexbox เหมาะสำหรับจัดเมนูนำทางให้เรียงกันในแนวนอน หรือจัดการ์ดสินค้าให้กระจายเท่า ๆ กันในแถวเดียว ซึ่งทำได้ยากหากใช้เพียง float หรือ table แบบเดิม",
+  "questions": [
+    {
+      "type": "list",
+      "prompt": "คุณสมบัติ CSS ที่ใช้จัดรูปแบบข้อความมีอะไรบ้าง (ตอบอย่างน้อย 3 คุณสมบัติ)"
+    },
+    {
+      "type": "list",
+      "prompt": "Box Model ประกอบด้วยส่วนใดบ้าง เรียงจากในสู่นอก"
+    },
+    {
+      "type": "fill",
+      "prompt": "หากต้องการลบเส้นใต้ของลิงก์ ใช้คำสั่ง CSS ว่า text-decoration: ______ ;"
+    },
+    {
+      "type": "fill",
+      "prompt": "หากต้องการให้องค์ประกอบแม่จัดเรียงลูกแบบ Flexbox ต้องกำหนดคุณสมบัติ display: ______ ;"
+    },
+    {
+      "type": "short",
+      "prompt": "justify-content และ align-items ใน Flexbox แตกต่างกันอย่างไร"
+    },
+    {
+      "type": "applied",
+      "prompt": "เขียนคำสั่ง CSS ให้ <div class=\"nav\"> จัดเมนูลูกเรียงแนวนอน กระจายห่างเท่ากัน และอยู่กึ่งกลางแนวตั้ง โดยใช้ Flexbox"
+    }
+  ],
+  "answerKey": [
+    "font-family, font-size, font-weight, text-align, line-height, text-decoration (ตอบอย่างน้อย 3 ข้อ)",
+    "Content, Padding, Border, Margin",
+    "none",
+    "flex",
+    "justify-content จัดตำแหน่งองค์ประกอบลูกในแนวนอน (แกนหลัก) ส่วน align-items จัดตำแหน่งในแนวตั้ง (แกนตัดขวาง)",
+    ".nav {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}"
+  ]
+}
