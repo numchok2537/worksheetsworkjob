@@ -37,7 +37,7 @@
   }
 
   function loadSubjects() {
-    fetch("data/subjects.json")
+    fetch("data/subjects.json", { cache: "no-store" })
       .then(function (res) {
         return res.json();
       })
@@ -73,7 +73,7 @@
     var path = "data/worksheets/" + subjectCode + "-week" + pad(Number(week)) + ".json";
     showPlaceholder("กำลังโหลดใบงาน...");
 
-    fetch(path)
+    fetch(path, { cache: "no-store" })
       .then(function (res) {
         if (!res.ok) throw new Error("not found");
         return res.json();

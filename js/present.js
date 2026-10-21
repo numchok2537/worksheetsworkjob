@@ -54,7 +54,7 @@
   }
 
   function loadSubjects() {
-    fetch("data/subjects.json")
+    fetch("data/subjects.json", { cache: "no-store" })
       .then(function (res) {
         return res.json();
       })
@@ -173,7 +173,7 @@
     showPlaceholder("กำลังโหลดสไลด์...");
     placeholder.hidden = false;
 
-    fetch(path)
+    fetch(path, { cache: "no-store" })
       .then(function (res) {
         if (!res.ok) throw new Error("not found");
         return res.json();
