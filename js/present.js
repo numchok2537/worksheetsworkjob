@@ -83,6 +83,69 @@
     weekSelect.disabled = false;
   }
 
+  function renderVisual(visual) {
+    if (!visual || !visual.type) return "";
+
+    if (visual.type === "table") {
+      var headHtml = (visual.headers || [])
+        .map(function (h) {
+          return "<th>" + escapeHtml(h) + "</th>";
+        })
+        .join("");
+      var rowsHtml = (visual.rows || [])
+        .map(function (row) {
+          return (
+            "<tr>" +
+            row
+              .map(function (cell) {
+                return "<td>" + escapeHtml(cell) + "</td>";
+              })
+              .join("") +
+            "</tr>"
+          );
+        })
+        .join("");
+      return (
+        '<table class="slide-table">' +
+        (headHtml ? "<thead><tr>" + headHtml + "</tr></thead>" : "") +
+        "<tbody>" +
+        rowsHtml +
+        "</tbody>" +
+        "</table>"
+      );
+    }
+
+    if (visual.type === "flow") {
+      var stepsHtml = (visual.steps || [])
+        .map(function (step, i) {
+          var sep = i > 0 ? '<div class="flow-arrow">&rarr;</div>' : "";
+          return sep + '<div class="flow-step">' + escapeHtml(step) + "</div>";
+        })
+        .join("");
+      return '<div class="slide-flow">' + stepsHtml + "</div>";
+    }
+
+    if (visual.type === "tree") {
+      var childrenHtml = (visual.children || [])
+        .map(function (c) {
+          return '<div class="tree-child">' + escapeHtml(c) + "</div>";
+        })
+        .join("");
+      return (
+        '<div class="slide-tree">' +
+        '<div class="tree-root">' +
+        escapeHtml(visual.root || "") +
+        "</div>" +
+        '<div class="tree-children">' +
+        childrenHtml +
+        "</div>" +
+        "</div>"
+      );
+    }
+
+    return "";
+  }
+
   function renderSlide() {
     var slide = slides[slideIndex];
     var bulletsHtml = (slide.bullets || [])
@@ -97,6 +160,7 @@
       escapeHtml(slide.heading) +
       "</h2>" +
       (bulletsHtml ? '<ul class="slide-bullets">' + bulletsHtml + "</ul>" : "") +
+      renderVisual(slide.visual) +
       "</div>";
 
     counter.textContent = slideIndex + 1 + " / " + slides.length;
