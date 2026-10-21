@@ -5,30 +5,39 @@
   "title": "การตกแต่งข้อความและเลย์เอาต์ด้วย CSS",
   "slides": [
     {
+      "heading": "เป้าหมายวันนี้",
+      "bullets": [
+        "สัปดาห์ที่แล้วเรียนซีเลคเตอร์และ property พื้นฐานแล้ว วันนี้จะเจาะลึกการตกแต่งข้อความและจัดเลย์เอาต์จริง",
+        "หัวใจของวันนี้คือ Box Model และ Flexbox ซึ่งเป็นพื้นฐานการจัดหน้าเว็บสมัยใหม่ทั้งหมด"
+      ]
+    },
+    {
       "heading": "การตกแต่งข้อความด้วย CSS",
       "bullets": [
         "font-weight: bold; ทำตัวหนา, font-style: italic; ทำตัวเอียง",
         "text-decoration: underline; ขีดเส้นใต้ / none; เอาเส้นใต้ลิงก์ออก",
-        "line-height: 1.5; เพิ่มระยะห่างระหว่างบรรทัดให้อ่านง่าย",
-        "letter-spacing และ text-transform: uppercase; ปรับระยะตัวอักษรและตัวพิมพ์ใหญ่"
+        "line-height: 1.5; เพิ่มระยะห่างระหว่างบรรทัดให้อ่านง่ายขึ้น",
+        "letter-spacing และ text-transform: uppercase; ปรับระยะตัวอักษรและเปลี่ยนเป็นตัวพิมพ์ใหญ่"
       ]
     },
     {
-      "heading": "กล่องและ Box Model",
+      "heading": "ทุก element คือกล่อง (Box Model)",
       "bullets": [
-        "ทุก element คือกล่อง (box) ประกอบด้วย content, padding, border, margin",
-        "padding คือระยะห่างภายในกล่องระหว่างเนื้อหากับขอบ",
-        "margin คือระยะห่างภายนอกกล่อง ระหว่างกล่องกับกล่องอื่น",
-        "box-sizing: border-box; ทำให้ width รวม padding และ border ไว้แล้ว คำนวณง่ายขึ้น"
+        "ทุก element ใน HTML คือกล่อง (box) ไม่ว่าจะเป็น p, div, img หรือ button",
+        "กล่องแต่ละใบประกอบด้วย 4 ชั้นซ้อนกันจากในสู่นอก: content, padding, border, margin",
+        "เข้าใจ Box Model คือกุญแจสำคัญที่ทำให้จัดระยะห่างและขนาดกล่องได้แม่นยำ"
       ]
     },
     {
-      "heading": "จัดเลย์เอาต์ด้วย Flexbox",
+      "heading": "โครงสร้าง Box Model จากในสู่นอก",
+      "visual": {
+        "type": "tree",
+        "root": "margin — ระยะห่างนอกกล่อง (ระหว่างกล่องนี้กับกล่องอื่น)",
+        "children": ["border — เส้นขอบกล่อง", "padding — ระยะห่างในกล่อง ระหว่างเนื้อหากับขอบ", "content — เนื้อหาจริง (ข้อความ/รูปภาพ)"]
+      },
       "bullets": [
-        "display: flex; บนตัวครอบ ทำให้ลูกเรียงแถวแนวนอนอัตโนมัติ",
-        "justify-content: space-between; จัดระยะห่างแนวนอน, align-items: center; จัดกึ่งกลางแนวตั้ง",
-        "flex-direction: column; เปลี่ยนให้เรียงแนวตั้งแทน",
-        "ตัวอย่าง: .navbar { display: flex; justify-content: space-between; }"
+        "box-sizing: border-box; ทำให้ width ที่กำหนดรวม padding และ border ไว้แล้ว คำนวณขนาดกล่องได้ง่ายขึ้นมาก",
+        "ถ้าไม่ตั้ง border-box เบราว์เซอร์จะบวก padding/border เพิ่มเข้าไปนอก width ที่ตั้งไว้ ทำให้กล่องกว้างกว่าที่คิด"
       ]
     },
     {
@@ -41,11 +50,72 @@
       ]
     },
     {
+      "heading": "จัดเลย์เอาต์ด้วย Flexbox",
+      "bullets": [
+        "display: flex; บนตัวครอบ (parent) ทำให้ลูกทั้งหมดเรียงแถวแนวนอนอัตโนมัติ",
+        "justify-content: space-between; จัดระยะห่างแนวนอนระหว่างลูก, align-items: center; จัดกึ่งกลางแนวตั้ง",
+        "flex-direction: column; เปลี่ยนให้เรียงแนวตั้งแทนแนวนอน",
+        "ตัวอย่าง: .navbar { display: flex; justify-content: space-between; align-items: center; }"
+      ]
+    },
+    {
+      "heading": "Flexbox ทำงานอย่างไรทีละขั้น",
+      "visual": {
+        "type": "flow",
+        "steps": [
+          "ตั้ง display: flex; บน element แม่ (flex container)",
+          "ลูกทุกตัว (flex items) เรียงแถวตาม flex-direction (ปกติเป็นแถวนอน)",
+          "ใช้ justify-content จัดระยะห่างตามแนวหลัก (แนวนอน)",
+          "ใช้ align-items จัดตำแหน่งตามแนวตั้งฉาก (แนวตั้ง)"
+        ]
+      },
+      "bullets": ["จำหลักนี้ไว้: ตั้งค่าที่ตัวแม่ (container) เท่านั้น ลูกจะเรียงตัวตามโดยอัตโนมัติ ไม่ต้องสั่งลูกทีละตัว"]
+    },
+    {
+      "heading": "property ของ Flexbox ที่ใช้บ่อย",
+      "visual": {
+        "type": "table",
+        "headers": ["property", "ใส่ที่", "ผลลัพธ์"],
+        "rows": [
+          ["display: flex;", "ตัวแม่ (container)", "เปิดใช้งาน flexbox"],
+          ["justify-content", "ตัวแม่", "จัดระยะห่างแนวหลัก (ซ้าย-ขวา)"],
+          ["align-items", "ตัวแม่", "จัดตำแหน่งแนวตั้งฉาก (บน-ล่าง)"],
+          ["flex-direction", "ตัวแม่", "เลือกเรียงแถว (row) หรือแนวตั้ง (column)"]
+        ]
+      },
+      "bullets": ["สังเกตว่า property ของ Flexbox ทั้งหมดใส่ที่ตัวแม่ นี่คือสิ่งที่มือใหม่สับสนบ่อยที่สุด"]
+    },
+    {
       "heading": "ตัวอย่างหน้าเว็บที่จัดเลย์เอาต์ด้วย Flexbox",
       "bullets": [
         "สร้าง navbar แนวนอนด้วย display: flex จัดเมนูให้อยู่ข้างกัน",
-        "จัดโครง main เป็นสองคอลัมน์ (content + sidebar) ด้วย flex",
-        "ให้นักเรียนนำโครงหน้าของสัปดาห์ 6 มาตกแต่งด้วยเทคนิควันนี้"
+        "จัดโครง main เป็นสองคอลัมน์ (content + sidebar) ด้วย .main { display: flex; }",
+        ".content { flex: 2; } .sidebar { flex: 1; } — flex กำหนดสัดส่วนความกว้างของแต่ละคอลัมน์"
+      ]
+    },
+    {
+      "heading": "ข้อผิดพลาดที่พบบ่อยเรื่อง Box Model และ Flexbox",
+      "bullets": [
+        "ลืมตั้ง box-sizing: border-box; ทำให้กล่องกว้างกว่าที่คาดไว้เมื่อมี padding/border",
+        "ตั้ง display: flex ที่ตัวลูกแทนตัวแม่ ทำให้ไม่เกิดผลตามที่ต้องการ",
+        "ใช้ margin ชนกันระหว่างสองกล่องติดกัน (margin collapse) ทำให้ระยะห่างไม่เท่ากับที่คำนวณไว้"
+      ]
+    },
+    {
+      "heading": "กิจกรรมท้ายคาบ",
+      "bullets": [
+        "ให้นักเรียนนำโครงหน้าของสัปดาห์ 6 มาตกแต่งด้วยเทคนิควันนี้",
+        "ทำ navbar แนวนอนด้วย flexbox และจัดโครง main เป็น 2 คอลัมน์ (content + aside)",
+        "ลองปรับ padding, margin, border-radius ของกล่องให้ดูสวยงามตามความคิดสร้างสรรค์ของตัวเอง"
+      ]
+    },
+    {
+      "heading": "สรุปสัปดาห์นี้",
+      "bullets": [
+        "ทุก element คือกล่องประกอบด้วย content, padding, border, margin — box-sizing: border-box ช่วยคำนวณขนาดง่ายขึ้น",
+        "display: flex ที่ตัวแม่ เปิดใช้งาน Flexbox จัดเรียงลูกอัตโนมัติ",
+        "justify-content จัดแนวหลัก, align-items จัดแนวตั้งฉาก, flex-direction เลือกทิศทางการเรียง",
+        "สัปดาห์หน้า: การออกแบบและสร้างฟอร์มรับข้อมูลจากผู้ใช้"
       ]
     }
   ]

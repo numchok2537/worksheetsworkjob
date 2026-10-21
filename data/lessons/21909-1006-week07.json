@@ -5,10 +5,17 @@
   "title": "พื้นฐาน CSS: ซีเลคเตอร์และการจัดรูปแบบ",
   "slides": [
     {
+      "heading": "เป้าหมายวันนี้",
+      "bullets": [
+        "จากสัปดาห์ที่แล้วเรามีโครง HTML สมบูรณ์พร้อมแล้ว วันนี้จะเริ่มแต่งสีและรูปแบบด้วย CSS",
+        "จะได้เรียนรู้วิธีเชื่อม CSS กับ HTML, ซีเลคเตอร์พื้นฐาน, และ property ที่ใช้บ่อยที่สุด"
+      ]
+    },
+    {
       "heading": "CSS คืออะไรและเชื่อมกับ HTML อย่างไร",
       "bullets": [
         "CSS (Cascading Style Sheets) ใช้กำหนดสี ขนาด ระยะห่าง และเลย์เอาต์ของ HTML",
-        "วิธีที่ 1: inline style เช่น <p style=\"color:red;\">ข้อความ</p> (ไม่แนะนำใช้บ่อย)",
+        "วิธีที่ 1: inline style เช่น <p style=\"color:red;\">ข้อความ</p> (ไม่แนะนำใช้บ่อย เพราะผสมกับ HTML)",
         "วิธีที่ 2: internal style ใน <style> ภายใน <head>",
         "วิธีที่ 3 (แนะนำ): external stylesheet เชื่อมด้วย <link rel=\"stylesheet\" href=\"style.css\">"
       ]
@@ -18,24 +25,35 @@
       "bullets": [
         "โครงสร้าง: selector { property: value; }",
         "ตัวอย่าง: p { color: blue; font-size: 16px; }",
-        "ต้องปิดแต่ละคำสั่งด้วย semicolon (;) และครอบด้วยปีกกา { }"
+        "ต้องปิดแต่ละคำสั่งด้วย semicolon (;) และครอบด้วยปีกกา { } — ลืม ; มักทำให้คำสั่งถัดไปพังตามไปด้วย"
       ]
     },
     {
       "heading": "ซีเลคเตอร์พื้นฐาน (basic selectors)",
       "bullets": [
-        "Element selector: p { } เลือกทุกแท็ก <p>",
-        "Class selector: .highlight { } เลือกทุกแท็กที่มี class=\"highlight\"",
-        "ID selector: #header { } เลือกแท็กที่มี id=\"header\" เฉพาะหนึ่งตัวต่อหน้า",
-        "Universal selector: * { } เลือกทุกแท็กในหน้า"
+        "Element selector: p { } เลือกทุกแท็ก <p> ในหน้า",
+        "Class selector: .highlight { } เลือกทุกแท็กที่มี class=\"highlight\" (ใช้ซ้ำได้หลายที่)",
+        "ID selector: #header { } เลือกแท็กที่มี id=\"header\" ซึ่งควรมีได้เพียงหนึ่งตัวต่อหน้า",
+        "Universal selector: * { } เลือกทุกแท็กในหน้า (มักใช้รีเซ็ต margin/padding)"
       ]
     },
     {
-      "heading": "ซีเลคเตอร์แบบรวมและลำดับความสำคัญ",
+      "heading": "ซีเลคเตอร์แบบรวมและซ้อนกัน",
       "bullets": [
-        "ลูกหลาน: nav a { } เลือก <a> ที่อยู่ภายใน <nav>",
-        "รวมหลายซีเลคเตอร์: h1, h2, h3 { color: navy; } จัดสไตล์เดียวกันให้หลายแท็ก",
-        "ลำดับความสำคัญ (specificity): ID > class > element — ถ้าชนกัน ตัวที่เฉพาะเจาะจงกว่าชนะ"
+        "ลูกหลาน (descendant): nav a { } เลือก <a> ทุกตัวที่อยู่ภายใน <nav> ไม่ว่าจะซ้อนลึกแค่ไหน",
+        "รวมหลายซีเลคเตอร์ด้วย comma: h1, h2, h3 { color: navy; } จัดสไตล์เดียวกันให้หลายแท็กพร้อมกัน",
+        "ลูกโดยตรง (child): nav > ul { } เลือกเฉพาะ <ul> ที่เป็นลูกตรงของ <nav> เท่านั้น"
+      ]
+    },
+    {
+      "heading": "ลำดับความสำคัญของซีเลคเตอร์ (specificity)",
+      "visual": {
+        "type": "tree",
+        "root": "Specificity: ใครชนะเมื่อสไตล์ชนกัน",
+        "children": ["#id — ความเฉพาะเจาะจงสูงสุด", ".class — รองลงมา", "element (p, div, ...) — ความเฉพาะเจาะจงต่ำสุด"]
+      },
+      "bullets": [
+        "ถ้ากฎ CSS สองข้อขัดกัน ตัวที่เฉพาะเจาะจงกว่า (อยู่บนสุดของแผนภาพนี้) จะชนะเสมอ ไม่ว่าจะเขียนไว้ก่อนหรือหลัง"
       ]
     },
     {
@@ -44,15 +62,62 @@
         "color กำหนดสีตัวอักษร, background-color กำหนดสีพื้นหลัง",
         "font-size ขนาดตัวอักษร, font-family ฟอนต์ เช่น font-family: 'TH Sarabun New', sans-serif;",
         "text-align: center; จัดข้อความกึ่งกลาง",
-        "border: 1px solid black; กำหนดเส้นขอบ"
+        "border: 1px solid black; กำหนดเส้นขอบ (ความหนา, ลักษณะเส้น, สี)"
       ]
     },
     {
-      "heading": "ตัวอย่างฝึกปฏิบัติ",
+      "heading": "วิธีเขียนค่าสีใน CSS",
+      "visual": {
+        "type": "table",
+        "headers": ["รูปแบบ", "ตัวอย่าง", "ลักษณะ"],
+        "rows": [
+          ["ชื่อสี", "color: red;", "อ่านง่าย แต่มีสีให้เลือกจำกัด"],
+          ["HEX", "color: #ff0000;", "นิยมใช้มากที่สุด แม่นยำ"],
+          ["RGB", "color: rgb(255, 0, 0);", "กำหนดค่าแดง-เขียว-น้ำเงินตรง ๆ"],
+          ["RGBA", "color: rgba(255, 0, 0, 0.5);", "เหมือน RGB แต่เพิ่มค่าความโปร่งใส"]
+        ]
+      },
+      "bullets": ["ทั้ง 4 รูปแบบใช้แทนกันได้ใน property สีทุกตัว เลือกตามความถนัดและความต้องการเรื่องความโปร่งใส"]
+    },
+    {
+      "heading": "ตัวอย่างการใช้งานจริง: จัดสไตล์ header และ nav",
       "bullets": [
-        "สร้างไฟล์ style.css แล้วเชื่อมกับหน้า HTML ของสัปดาห์ก่อน",
+        "header { background-color: #003366; color: white; padding: 20px; }",
+        "nav a { color: white; text-decoration: none; margin-right: 15px; }",
+        "nav a:hover { text-decoration: underline; } — :hover คือ pseudo-class ที่ทำงานเมื่อเมาส์ชี้อยู่"
+      ]
+    },
+    {
+      "heading": "ข้อผิดพลาดที่พบบ่อยของมือใหม่",
+      "bullets": [
+        "ลืมใส่ ; ท้ายบรรทัด ทำให้ property ถัดไปไม่ทำงาน",
+        "สะกด property ผิด เช่น colr แทน color — เบราว์เซอร์จะไม่แจ้ง error แค่เพิกเฉยค่านั้นไปเงียบ ๆ",
+        "ใช้ #id ซ้ำกันหลายที่ในหน้าเดียว (ผิดกฎ HTML และทำให้ CSS ไม่แน่นอน)"
+      ]
+    },
+    {
+      "heading": "ตรวจสอบ CSS ด้วย Developer Tools",
+      "bullets": [
+        "กด F12 แล้วคลิกแท็บ Elements จะเห็น property และค่าที่ใช้งานจริงของแต่ละ element",
+        "สามารถคลิกปิด/เปิด checkbox หน้า property เพื่อทดสอบผลลัพธ์โดยไม่ต้องแก้ไฟล์จริง",
+        "ถ้า property ขีดฆ่า (strikethrough) แปลว่ากฎนั้นถูกกฎอื่นที่ specificity สูงกว่าทับอยู่"
+      ]
+    },
+    {
+      "heading": "กิจกรรมท้ายคาบ",
+      "bullets": [
+        "สร้างไฟล์ style.css แล้วเชื่อมกับหน้า HTML ของสัปดาห์ก่อนด้วย <link rel=\"stylesheet\">",
         "ลองเปลี่ยนสีพื้นหลังของ header และสีตัวอักษรของ h1",
-        "ลองใช้ class ตั้งสไตล์ปุ่มหรือกล่องข้อความให้แตกต่างกัน"
+        "ลองใช้ class ตั้งสไตล์ปุ่มหรือกล่องข้อความให้แตกต่างกันอย่างน้อย 2 รูปแบบ"
+      ]
+    },
+    {
+      "heading": "สรุปสัปดาห์นี้",
+      "bullets": [
+        "เชื่อม CSS กับ HTML ที่แนะนำที่สุดคือ external stylesheet ผ่าน <link>",
+        "ซีเลคเตอร์หลัก 3 แบบ: element, .class, #id — specificity เรียง id > class > element",
+        "property พื้นฐาน: color, background-color, font-size, font-family, text-align, border",
+        "สัปดาห์หน้า: ตกแต่งข้อความเพิ่มเติมและเริ่มจัดเลย์เอาต์ด้วย Box Model และ Flexbox"
       ]
     }
   ]

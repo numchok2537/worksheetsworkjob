@@ -5,55 +5,121 @@
   "title": "ทบทวนก่อนสอบปลายภาค",
   "slides": [
     {
+      "heading": "ภาพรวมเนื้อหาตลอดเทอม",
+      "bullets": [
+        "ตลอด 17 สัปดาห์ที่ผ่านมา เราเรียนครบทั้ง HTML (โครงสร้าง), CSS (รูปแบบ+เลย์เอาต์), และ JavaScript (การโต้ตอบ)",
+        "วันนี้จะทบทวนทุกหัวข้อสำคัญเป็นหมวดหมู่ เพื่อเตรียมตัวสอบปลายภาคให้พร้อมที่สุด",
+        "ถ้ามีจุดไหนยังไม่แน่ใจ ให้จดไว้ถามในคาบนี้ก่อนสอบจริง"
+      ]
+    },
+    {
       "heading": "ทบทวน HTML: โครงสร้างและเนื้อหา (สัปดาห์ 2-6)",
       "bullets": [
-        "โครงสร้างเอกสาร HTML5: <!DOCTYPE html>, <html>, <head>, <body>",
+        "โครงสร้างเอกสาร HTML5: <!DOCTYPE html>, <html lang>, <head>, <body>",
         "แท็กจัดรูปแบบข้อความ: h1-h6, p, strong, em, ul/ol/li, และลิงก์ a href",
-        "แทรกรูปภาพ/มัลติมีเดีย: img กับ alt, video, audio, iframe",
-        "ตาราง: table, tr, th, td, colspan/rowspan",
+        "แทรกรูปภาพ/มัลติมีเดีย: img กับ alt (บังคับเสมอ), video, audio, iframe",
+        "ตาราง: table, tr, th, td, colspan/rowspan, thead/tbody/tfoot",
         "โครงหน้าหลายส่วนด้วย semantic tags: header, nav, main, aside, footer"
       ]
     },
     {
+      "heading": "เปรียบเทียบแท็กที่มือใหม่สับสนบ่อย",
+      "visual": {
+        "type": "table",
+        "headers": ["แท็ก/คำ", "ความหมาย", "ใช้เมื่อไร"],
+        "rows": [
+          ["<section> vs <div>", "section มีความหมายเชิงโครงสร้าง, div ไม่มี", "ใช้ section เมื่อเนื้อหาเป็นหัวข้อจริง ใช้ div เมื่อแค่จัดกลุ่มเพื่อสไตล์"],
+          ["id vs class", "id ใช้ได้ครั้งเดียวต่อหน้า, class ใช้ซ้ำได้หลายที่", "id สำหรับจุดเฉพาะเจาะจง, class สำหรับสไตล์ที่ใช้ซ้ำ"],
+          ["<main> vs <article>", "main คือเนื้อหาหลักของหน้า (มีได้ 1 ตัว), article คือเนื้อหาที่แยกเดี่ยวได้", "main ครอบทั้งหน้า, article ครอบแต่ละเนื้อหา เช่น บทความ"]
+        ]
+      },
+      "bullets": ["คำถามข้อสอบมักถามเปรียบเทียบคู่คำเหล่านี้ ให้ทวนความแตกต่างให้แม่นก่อนสอบ"]
+    },
+    {
       "heading": "ทบทวน CSS: การจัดรูปแบบและเลย์เอาต์ (สัปดาห์ 7-8, 14)",
       "bullets": [
-        "ซีเลคเตอร์: element, .class, #id และลำดับความสำคัญ (specificity)",
+        "ซีเลคเตอร์: element, .class, #id และลำดับความสำคัญ (specificity: id > class > element)",
         "Box model: content, padding, border, margin และ box-sizing: border-box",
-        "Flexbox: display: flex, justify-content, align-items, flex-direction",
+        "Flexbox: display: flex (ตั้งที่ตัวแม่), justify-content, align-items, flex-direction",
         "Responsive design: viewport meta, relative units (%, em, rem, vw/vh), media query @media"
       ]
     },
     {
+      "heading": "Box Model: ทวนโครงสร้างกล่องจากในสู่นอก",
+      "visual": {
+        "type": "tree",
+        "root": "margin — ระยะห่างนอกกล่อง",
+        "children": ["border — เส้นขอบกล่อง", "padding — ระยะห่างในกล่อง", "content — เนื้อหาจริง"]
+      },
+      "bullets": ["ข้อสอบมักถามว่า box-sizing: border-box ทำอะไร — คำตอบคือทำให้ width ที่ตั้งไว้รวม padding และ border เข้าไปแล้ว ไม่บวกเพิ่ม"]
+    },
+    {
       "heading": "ทบทวนฟอร์มและการตรวจสอบข้อมูล (สัปดาห์ 9-10)",
       "bullets": [
-        "องค์ประกอบฟอร์ม: form, label, input (text/email/radio/checkbox), textarea, select, button",
+        "องค์ประกอบฟอร์ม: form, label (ต้องคู่กับ input เสมอด้วย for/id), input (text/email/radio/checkbox), textarea, select, button",
         "การตรวจสอบข้อมูลด้วย HTML attribute: required, pattern, min/max, minlength/maxlength",
-        "ความแตกต่างระหว่าง client-side validation กับ server-side validation"
+        "ความแตกต่างระหว่าง client-side validation (เร็ว แต่ข้ามได้) กับ server-side validation (ปลอดภัยจริง)"
       ]
     },
     {
       "heading": "ทบทวนลิงก์และ JavaScript (สัปดาห์ 11-13)",
       "bullets": [
-        "ลิงก์ภายใน (relative path) กับลิงก์ภายนอก (absolute path), target=\"_blank\", download, mailto:, tel:",
+        "ลิงก์ภายใน (relative path) กับลิงก์ภายนอก (absolute path), target=\"_blank\" rel=\"noopener\", download, mailto:, tel:",
         "พื้นฐาน JavaScript: let/const, console.log, document.getElementById/querySelector",
-        "Event และการโต้ตอบ: addEventListener('click', ...), if-else, การอ่านค่าจากฟอร์มด้วย .value"
+        "Event และการโต้ตอบ: addEventListener('click', ...), if-else (ใช้ === เทียบ), การอ่านค่าจากฟอร์มด้วย .value, for/while loop"
       ]
+    },
+    {
+      "heading": "ลำดับการทำงานของเว็บเพจเมื่อผู้ใช้โต้ตอบ",
+      "visual": {
+        "type": "flow",
+        "steps": [
+          "เบราว์เซอร์โหลด HTML สร้างโครงหน้า (DOM) และใช้ CSS จัดรูปแบบ",
+          "JavaScript ทำงาน เลือก element ด้วย getElementById/querySelector",
+          "ผู้ใช้กระทำบางอย่าง (คลิก/กรอกฟอร์ม) เกิด event",
+          "addEventListener ที่ผูกไว้ทำงาน ตรวจเงื่อนไขและเปลี่ยนค่าบนหน้าเว็บ"
+        ]
+      },
+      "bullets": ["แผนภาพนี้สรุปภาพรวมทั้งวิชา — ถ้าอธิบายขั้นตอนนี้ได้ แสดงว่าเข้าใจความสัมพันธ์ของ HTML/CSS/JS แล้ว"]
     },
     {
       "heading": "ทบทวนการทดสอบและการนำเว็บไซต์ขึ้นออนไลน์ (สัปดาห์ 15-17)",
       "bullets": [
-        "ขั้นตอนทดสอบเว็บไซต์: ตรวจลิงก์เสีย, ใช้ W3C Validator, ทดสอบบนมือถือจริง",
-        "วิธีอัพโหลดเว็บไซต์ขึ้น GitHub Pages: index.html ต้องอยู่ root, Settings > Pages",
-        "ภาพรวมโครงงานย่อย: การวางแผน sitemap, แบ่งงาน HTML→CSS→JS, และการนำเสนอผลงาน"
+        "ขั้นตอนทดสอบเว็บไซต์: ตรวจลิงก์เสีย, ใช้ W3C Validator, ทดสอบบนมือถือจริง, ตรวจความเร็วโหลด",
+        "วิธีอัพโหลดเว็บไซต์ขึ้น GitHub Pages: index.html ต้องอยู่ root, ตั้งค่าที่ Settings > Pages",
+        "ภาพรวมโครงงานย่อย: การวางแผน sitemap, แบ่งงาน HTML→CSS→JS, ทดสอบ, อัพโหลด และการนำเสนอผลงาน"
       ]
+    },
+    {
+      "heading": "คำสั่ง/property ที่ควรจำให้แม่นก่อนสอบ",
+      "visual": {
+        "type": "table",
+        "headers": ["หมวด", "คำสั่งสำคัญ"],
+        "rows": [
+          ["HTML", "<!DOCTYPE html>, meta charset/viewport, img alt, a href, form/input/label"],
+          ["CSS", "selector { property: value; }, display: flex, @media (max-width: ...)"],
+          ["JavaScript", "let/const, getElementById, querySelector, addEventListener, if-else, for"]
+        ]
+      },
+      "bullets": ["ลองปิดสไลด์นี้แล้วเขียนคำสั่งเหล่านี้จากความจำดูว่าเขียนถูกต้องครบหรือไม่"]
     },
     {
       "heading": "แนวข้อสอบและข้อแนะนำการเตรียมตัว",
       "bullets": [
-        "ทบทวนความแตกต่างของแท็กที่คล้ายกัน เช่น section กับ div, id กับ class",
+        "ทบทวนความแตกต่างของแท็ก/คำที่คล้ายกัน เช่น section กับ div, id กับ class, GET กับ POST",
         "ฝึกเขียนโครงสร้าง HTML เปล่า ๆ ให้ถูกต้องโดยไม่ดูตัวอย่าง",
-        "ลองอธิบายด้วยคำพูดของตัวเองว่า media query และ flexbox ทำงานอย่างไร",
+        "ลองอธิบายด้วยคำพูดของตัวเองว่า media query, flexbox, และ event ทำงานอย่างไร",
         "ทวนคำสั่ง JavaScript พื้นฐานที่ใช้บ่อย เช่น getElementById, addEventListener, if-else"
+      ]
+    },
+    {
+      "heading": "สรุปภาพรวมทั้งเทอม",
+      "bullets": [
+        "สัปดาห์ 1-6: พื้นฐานอินเทอร์เน็ตและ HTML5 ตั้งแต่โครงสร้างจนถึงตาราง/semantic tags",
+        "สัปดาห์ 7-8, 14: CSS ตั้งแต่ซีเลคเตอร์ถึง Flexbox และ responsive design",
+        "สัปดาห์ 9-13: ฟอร์ม, การตรวจสอบข้อมูล, ลิงก์ และ JavaScript พื้นฐานถึงการโต้ตอบ",
+        "สัปดาห์ 15-17: การทดสอบ การอัพโหลดขึ้นออนไลน์จริง และโครงงานย่อย",
+        "ขอให้ทุกคนทบทวนให้ครบและทำข้อสอบปลายภาคได้ดี"
       ]
     }
   ]
