@@ -1,0 +1,56 @@
+{
+  "subjectCode": "21909-1006",
+  "subjectName": "พื้นฐานการสร้างเว็บไซต์",
+  "week": 13,
+  "title": "การเขียน JavaScript โต้ตอบผู้ใช้เบื้องต้น",
+  "slides": [
+    {
+      "heading": "การจัดการ event เบื้องต้น",
+      "bullets": [
+        "event คือสิ่งที่เกิดขึ้นบนหน้าเว็บ เช่น คลิก (click), พิมพ์ (input), เลื่อนเมาส์ (mouseover)",
+        "addEventListener('click', function() {...}) ผูกฟังก์ชันให้ทำงานเมื่อเกิด event นั้น",
+        "ตัวอย่าง: button.addEventListener('click', function() { alert('คลิกแล้ว!'); });"
+      ]
+    },
+    {
+      "heading": "ตัวอย่าง: ปุ่มเปลี่ยนสีพื้นหลัง",
+      "bullets": [
+        "HTML: <button id=\"btn\">เปลี่ยนสี</button>",
+        "JS: document.getElementById('btn').addEventListener('click', function() { document.body.style.backgroundColor = 'lightblue'; });",
+        "ให้นักเรียนลองสุ่มสีด้วย Math.random() เพื่อเปลี่ยนสีทุกครั้งที่คลิก"
+      ]
+    },
+    {
+      "heading": "เงื่อนไข if-else ในสถานการณ์จริง",
+      "bullets": [
+        "if (condition) {...} else {...} ใช้ตัดสินใจทำงานตามเงื่อนไข",
+        "ตัวอย่าง: if (score >= 50) { result = 'ผ่าน'; } else { result = 'ไม่ผ่าน'; }",
+        "ใช้ร่วมกับฟอร์ม เช่น ตรวจค่าที่ผู้ใช้กรอกแล้วแสดงข้อความตอบกลับ"
+      ]
+    },
+    {
+      "heading": "อ่านค่าจากฟอร์มด้วย JavaScript",
+      "bullets": [
+        "let value = document.getElementById('name').value; อ่านค่าที่ผู้ใช้กรอกในช่อง input",
+        "ตัวอย่างรวมฟอร์ม: อ่านชื่อจากช่องกรอก แล้วแสดงข้อความทักทายด้วย textContent",
+        "ป้องกัน event submit เริ่มต้นด้วย event.preventDefault() เมื่อต้องการจัดการเองด้วย JS"
+      ]
+    },
+    {
+      "heading": "ลูป (loop) เบื้องต้น",
+      "bullets": [
+        "for (let i = 1; i <= 5; i++) { console.log(i); } วนซ้ำตามจำนวนรอบที่กำหนด",
+        "ใช้ลูปสร้างรายการซ้ำ ๆ เช่น แสดงเลข 1-10 บนหน้าเว็บโดยไม่ต้องเขียนซ้ำ 10 ครั้ง",
+        "while (condition) {...} วนซ้ำจนกว่าเงื่อนไขเป็นเท็จ"
+      ]
+    },
+    {
+      "heading": "ตัวอย่างโปรเจกต์เล็ก: นับคลิก",
+      "bullets": [
+        "ตัวแปร let count = 0; เพิ่มค่าทีละ 1 ทุกครั้งที่คลิกปุ่ม (count++)",
+        "แสดงผลค่าปัจจุบันด้วย textContent ทุกครั้งที่ count เปลี่ยน",
+        "ให้นักเรียนต่อยอดเป็นเกมทายเลขหรือนาฬิกาจับเวลาอย่างง่าย"
+      ]
+    }
+  ]
+}

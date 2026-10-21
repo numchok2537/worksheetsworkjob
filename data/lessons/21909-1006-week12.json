@@ -1,0 +1,58 @@
+{
+  "subjectCode": "21909-1006",
+  "subjectName": "พื้นฐานการสร้างเว็บไซต์",
+  "week": 12,
+  "title": "พื้นฐาน JavaScript และการแทรกสคริปต์",
+  "slides": [
+    {
+      "heading": "JavaScript คืออะไรและทำไมต้องใช้",
+      "bullets": [
+        "JavaScript ทำให้หน้าเว็บโต้ตอบกับผู้ใช้ได้ เช่น คลิกปุ่มแล้วเปลี่ยนเนื้อหา",
+        "ทำงานในเบราว์เซอร์โดยตรง ไม่ต้องติดตั้งโปรแกรมเพิ่ม",
+        "ร่วมกับ HTML (โครงสร้าง) และ CSS (รูปแบบ) ครบสามอย่างคือหัวใจของเว็บไซต์"
+      ]
+    },
+    {
+      "heading": "วิธีแทรกสคริปต์เข้าไปในหน้าเว็บ",
+      "bullets": [
+        "Internal script: <script>...</script> วางไว้ก่อนปิด </body>",
+        "External script: <script src=\"app.js\"></script> แยกไฟล์ JS ออกมา (แนะนำสำหรับโค้ดยาว)",
+        "ควรวาง <script> ท้ายหน้าเพื่อให้ HTML โหลดครบก่อนที่ JS จะเริ่มทำงาน"
+      ]
+    },
+    {
+      "heading": "ตัวแปรและชนิดข้อมูลพื้นฐาน",
+      "bullets": [
+        "let name = 'สมชาย'; ประกาศตัวแปรที่เปลี่ยนค่าได้",
+        "const pi = 3.14; ประกาศค่าคงที่ที่เปลี่ยนค่าไม่ได้",
+        "ชนิดข้อมูล: string (ข้อความ), number (ตัวเลข), boolean (true/false)",
+        "ตัวอย่าง: let age = 17; let isStudent = true;"
+      ]
+    },
+    {
+      "heading": "console.log และการดีบั๊กเบื้องต้น",
+      "bullets": [
+        "console.log('ข้อความ'); แสดงผลใน Developer Tools > Console ของเบราว์เซอร์",
+        "ใช้เช็คค่าตัวแปรขณะเขียนโค้ด เพื่อหาข้อผิดพลาด",
+        "เปิด Console ด้วยปุ่ม F12 หรือคลิกขวาเลือก Inspect"
+      ]
+    },
+    {
+      "heading": "เลือกและเปลี่ยนแปลง element ด้วย DOM เบื้องต้น",
+      "bullets": [
+        "document.getElementById('title') เลือก element ที่มี id=\"title\"",
+        "document.querySelector('.box') เลือก element แรกที่ตรงกับ CSS selector",
+        "element.textContent = 'ข้อความใหม่'; เปลี่ยนข้อความใน element นั้น",
+        "element.style.color = 'red'; เปลี่ยนสีตัวอักษรด้วย JavaScript"
+      ]
+    },
+    {
+      "heading": "ตัวอย่างสคริปต์แรก",
+      "bullets": [
+        "เขียนสคริปต์ที่เปลี่ยนข้อความใน <h1> เมื่อโหลดหน้าเสร็จ",
+        "ตัวอย่าง: document.getElementById('demo').textContent = 'ยินดีต้อนรับ!';",
+        "ให้นักเรียนลองเปลี่ยนสีพื้นหลังของหน้าด้วย JavaScript หนึ่งบรรทัด"
+      ]
+    }
+  ]
+}

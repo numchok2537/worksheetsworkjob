@@ -1,0 +1,58 @@
+{
+  "subjectCode": "21909-2015",
+  "subjectName": "การตัดต่อระบบเสียงและภาพด้วยปัญญาประดิษฐ์",
+  "week": 18,
+  "title": "ทบทวนก่อนสอบปลายภาค",
+  "slides": [
+    {
+      "heading": "ทบทวน: พื้นฐานเสียงและภาพดิจิทัล (สัปดาห์ 1-2)",
+      "bullets": [
+        "เสียง: sample rate, bit depth; ภาพ: resolution, frame rate — ปัจจัยพื้นฐานของคุณภาพงาน",
+        "รูปแบบไฟล์เสียง: WAV, MP3, AAC, FLAC และไฟล์ภาพ/วิดีโอ: JPEG, PNG, MP4, MOV",
+        "เลือก format ให้เหมาะกับขั้นตอนงาน (บันทึก/ตัดต่อ vs เผยแพร่)"
+      ]
+    },
+    {
+      "heading": "ทบทวน: อุปกรณ์และการบันทึก (สัปดาห์ 3-6)",
+      "bullets": [
+        "ไมโครโฟน: dynamic, condenser, lavalier, shotgun และ polar pattern ที่เหมาะกับงานแต่ละประเภท",
+        "กล้อง: exposure triangle (aperture, shutter speed, ISO) และการจัดองค์ประกอบภาพ",
+        "การจัดห้องสตูดิโอ (acoustic treatment, 3-point lighting) และเทคนิคถ่ายทำนอกสถานที่"
+      ]
+    },
+    {
+      "heading": "ทบทวน: เสียงสังเคราะห์ การบีบอัด และบท (สัปดาห์ 7-9)",
+      "bullets": [
+        "การสังเคราะห์เสียงด้วยโปรแกรมและ Text-to-Speech/AI voice",
+        "การบีบอัดไฟล์: lossy vs lossless, bitrate, codec (H.264/H.265)",
+        "การเขียนบท (script, storyboard, shot list) เพื่อวางแผนก่อนตัดต่อ"
+      ]
+    },
+    {
+      "heading": "ทบทวน: การตัดต่อและโปรดักชันครบกระบวนการ (สัปดาห์ 10-13)",
+      "bullets": [
+        "การใช้งานโปรแกรมตัดต่อพื้นฐาน: Premiere Pro, DaVinci Resolve, CapCut, Audacity",
+        "หลักการลำดับภาพ (continuity, 180-degree rule) และการซิงค์เสียง-ภาพ",
+        "เทคนิคพิเศษ: transition, speed effect, color grading, chroma key",
+        "กระบวนการโปรดักชันครบวงจร: pre-production, production, post-production"
+      ]
+    },
+    {
+      "heading": "ทบทวน: การประยุกต์ AI และโครงงาน (สัปดาห์ 14-17)",
+      "bullets": [
+        "AI ในงานตัดต่อเสียง: noise reduction, speech-to-text, voice generation",
+        "AI ในงานตัดต่อภาพ: auto-cut, auto color, background removal, generative AI",
+        "การตั้งค่า export ให้เหมาะกับแพลตฟอร์ม (aspect ratio, bitrate, loudness)",
+        "ทบทวนขั้นตอนและเกณฑ์ประเมินโครงงานย่อยที่ได้ลงมือทำจริง"
+      ]
+    },
+    {
+      "heading": "แนวข้อสอบและข้อแนะนำการเตรียมตัว",
+      "bullets": [
+        "ทบทวนคำศัพท์เฉพาะทาง (เช่น bitrate, codec, chroma key, polar pattern) ให้เข้าใจความหมายและใช้งานถูกบริบท",
+        "ฝึกอธิบายขั้นตอนการทำงานแบบ pre-post production ได้อย่างเป็นลำดับ",
+        "ทบทวนบทบาทของ AI ในแต่ละขั้นตอนของงานตัดต่อ ว่าช่วยอะไรและมีข้อจำกัดอะไร"
+      ]
+    }
+  ]
+}

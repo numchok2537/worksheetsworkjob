@@ -1,0 +1,59 @@
+{
+  "subjectCode": "21909-1006",
+  "subjectName": "พื้นฐานการสร้างเว็บไซต์",
+  "week": 7,
+  "title": "พื้นฐาน CSS: ซีเลคเตอร์และการจัดรูปแบบ",
+  "slides": [
+    {
+      "heading": "CSS คืออะไรและเชื่อมกับ HTML อย่างไร",
+      "bullets": [
+        "CSS (Cascading Style Sheets) ใช้กำหนดสี ขนาด ระยะห่าง และเลย์เอาต์ของ HTML",
+        "วิธีที่ 1: inline style เช่น <p style=\"color:red;\">ข้อความ</p> (ไม่แนะนำใช้บ่อย)",
+        "วิธีที่ 2: internal style ใน <style> ภายใน <head>",
+        "วิธีที่ 3 (แนะนำ): external stylesheet เชื่อมด้วย <link rel=\"stylesheet\" href=\"style.css\">"
+      ]
+    },
+    {
+      "heading": "รูปแบบคำสั่ง CSS พื้นฐาน",
+      "bullets": [
+        "โครงสร้าง: selector { property: value; }",
+        "ตัวอย่าง: p { color: blue; font-size: 16px; }",
+        "ต้องปิดแต่ละคำสั่งด้วย semicolon (;) และครอบด้วยปีกกา { }"
+      ]
+    },
+    {
+      "heading": "ซีเลคเตอร์พื้นฐาน (basic selectors)",
+      "bullets": [
+        "Element selector: p { } เลือกทุกแท็ก <p>",
+        "Class selector: .highlight { } เลือกทุกแท็กที่มี class=\"highlight\"",
+        "ID selector: #header { } เลือกแท็กที่มี id=\"header\" เฉพาะหนึ่งตัวต่อหน้า",
+        "Universal selector: * { } เลือกทุกแท็กในหน้า"
+      ]
+    },
+    {
+      "heading": "ซีเลคเตอร์แบบรวมและลำดับความสำคัญ",
+      "bullets": [
+        "ลูกหลาน: nav a { } เลือก <a> ที่อยู่ภายใน <nav>",
+        "รวมหลายซีเลคเตอร์: h1, h2, h3 { color: navy; } จัดสไตล์เดียวกันให้หลายแท็ก",
+        "ลำดับความสำคัญ (specificity): ID > class > element — ถ้าชนกัน ตัวที่เฉพาะเจาะจงกว่าชนะ"
+      ]
+    },
+    {
+      "heading": "คุณสมบัติ (property) พื้นฐานที่ใช้บ่อย",
+      "bullets": [
+        "color กำหนดสีตัวอักษร, background-color กำหนดสีพื้นหลัง",
+        "font-size ขนาดตัวอักษร, font-family ฟอนต์ เช่น font-family: 'TH Sarabun New', sans-serif;",
+        "text-align: center; จัดข้อความกึ่งกลาง",
+        "border: 1px solid black; กำหนดเส้นขอบ"
+      ]
+    },
+    {
+      "heading": "ตัวอย่างฝึกปฏิบัติ",
+      "bullets": [
+        "สร้างไฟล์ style.css แล้วเชื่อมกับหน้า HTML ของสัปดาห์ก่อน",
+        "ลองเปลี่ยนสีพื้นหลังของ header และสีตัวอักษรของ h1",
+        "ลองใช้ class ตั้งสไตล์ปุ่มหรือกล่องข้อความให้แตกต่างกัน"
+      ]
+    }
+  ]
+}

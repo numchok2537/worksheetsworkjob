@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>สไลด์สอนประจำสัปดาห์ — แผนกวิชาช่างเทคนิคคอมพิวเตอร์</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="present-body">
+  <header class="toolbar present-toolbar">
+    <h1>สไลด์สอนประจำสัปดาห์</h1>
+    <select id="term-select">
+      <option value="2/2569">ภาคเรียนที่ 2/2569</option>
+      <option value="1/2569">ภาคเรียนที่ 1/2569</option>
+    </select>
+    <select id="subject-select">
+      <option value="">-- เลือกวิชา --</option>
+    </select>
+    <select id="week-select" disabled>
+      <option value="">-- เลือกสัปดาห์ --</option>
+    </select>
+    <button id="fullscreen-btn" disabled>เต็มจอ</button>
+    <a href="index.html" class="back-link">&larr; กลับหน้าใบงาน</a>
+  </header>
+
+  <main id="present-main" class="present-main">
+    <div id="present-placeholder" class="placeholder">
+      เลือกวิชาและสัปดาห์เพื่อเริ่มนำเสนอ
+    </div>
+    <div id="slide-viewport" class="slide-viewport" hidden>
+      <div id="slide-stage" class="slide-stage"></div>
+      <div class="slide-nav">
+        <button id="prev-btn" aria-label="สไลด์ก่อนหน้า">&larr;</button>
+        <span id="slide-counter" class="slide-counter"></span>
+        <button id="next-btn" aria-label="สไลด์ถัดไป">&rarr;</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/present.js"></script>
+</body>
+</html>

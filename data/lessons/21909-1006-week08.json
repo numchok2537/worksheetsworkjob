@@ -1,0 +1,52 @@
+{
+  "subjectCode": "21909-1006",
+  "subjectName": "พื้นฐานการสร้างเว็บไซต์",
+  "week": 8,
+  "title": "การตกแต่งข้อความและเลย์เอาต์ด้วย CSS",
+  "slides": [
+    {
+      "heading": "การตกแต่งข้อความด้วย CSS",
+      "bullets": [
+        "font-weight: bold; ทำตัวหนา, font-style: italic; ทำตัวเอียง",
+        "text-decoration: underline; ขีดเส้นใต้ / none; เอาเส้นใต้ลิงก์ออก",
+        "line-height: 1.5; เพิ่มระยะห่างระหว่างบรรทัดให้อ่านง่าย",
+        "letter-spacing และ text-transform: uppercase; ปรับระยะตัวอักษรและตัวพิมพ์ใหญ่"
+      ]
+    },
+    {
+      "heading": "กล่องและ Box Model",
+      "bullets": [
+        "ทุก element คือกล่อง (box) ประกอบด้วย content, padding, border, margin",
+        "padding คือระยะห่างภายในกล่องระหว่างเนื้อหากับขอบ",
+        "margin คือระยะห่างภายนอกกล่อง ระหว่างกล่องกับกล่องอื่น",
+        "box-sizing: border-box; ทำให้ width รวม padding และ border ไว้แล้ว คำนวณง่ายขึ้น"
+      ]
+    },
+    {
+      "heading": "จัดเลย์เอาต์ด้วย Flexbox",
+      "bullets": [
+        "display: flex; บนตัวครอบ ทำให้ลูกเรียงแถวแนวนอนอัตโนมัติ",
+        "justify-content: space-between; จัดระยะห่างแนวนอน, align-items: center; จัดกึ่งกลางแนวตั้ง",
+        "flex-direction: column; เปลี่ยนให้เรียงแนวตั้งแทน",
+        "ตัวอย่าง: .navbar { display: flex; justify-content: space-between; }"
+      ]
+    },
+    {
+      "heading": "กำหนดขนาดและสีพื้นหลังของกล่อง",
+      "bullets": [
+        "width และ height กำหนดขนาดกล่อง เช่น width: 300px; หรือ width: 50%;",
+        "background-color และ background-image ตกแต่งพื้นหลัง",
+        "border-radius: 10px; ทำมุมกล่องโค้งมน",
+        "box-shadow: 2px 2px 8px gray; เพิ่มเงาให้กล่องดูมีมิติ"
+      ]
+    },
+    {
+      "heading": "ตัวอย่างหน้าเว็บที่จัดเลย์เอาต์ด้วย Flexbox",
+      "bullets": [
+        "สร้าง navbar แนวนอนด้วย display: flex จัดเมนูให้อยู่ข้างกัน",
+        "จัดโครง main เป็นสองคอลัมน์ (content + sidebar) ด้วย flex",
+        "ให้นักเรียนนำโครงหน้าของสัปดาห์ 6 มาตกแต่งด้วยเทคนิควันนี้"
+      ]
+    }
+  ]
+}

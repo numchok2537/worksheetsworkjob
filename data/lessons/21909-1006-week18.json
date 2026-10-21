@@ -1,0 +1,60 @@
+{
+  "subjectCode": "21909-1006",
+  "subjectName": "พื้นฐานการสร้างเว็บไซต์",
+  "week": 18,
+  "title": "ทบทวนก่อนสอบปลายภาค",
+  "slides": [
+    {
+      "heading": "ทบทวน HTML: โครงสร้างและเนื้อหา (สัปดาห์ 2-6)",
+      "bullets": [
+        "โครงสร้างเอกสาร HTML5: <!DOCTYPE html>, <html>, <head>, <body>",
+        "แท็กจัดรูปแบบข้อความ: h1-h6, p, strong, em, ul/ol/li, และลิงก์ a href",
+        "แทรกรูปภาพ/มัลติมีเดีย: img กับ alt, video, audio, iframe",
+        "ตาราง: table, tr, th, td, colspan/rowspan",
+        "โครงหน้าหลายส่วนด้วย semantic tags: header, nav, main, aside, footer"
+      ]
+    },
+    {
+      "heading": "ทบทวน CSS: การจัดรูปแบบและเลย์เอาต์ (สัปดาห์ 7-8, 14)",
+      "bullets": [
+        "ซีเลคเตอร์: element, .class, #id และลำดับความสำคัญ (specificity)",
+        "Box model: content, padding, border, margin และ box-sizing: border-box",
+        "Flexbox: display: flex, justify-content, align-items, flex-direction",
+        "Responsive design: viewport meta, relative units (%, em, rem, vw/vh), media query @media"
+      ]
+    },
+    {
+      "heading": "ทบทวนฟอร์มและการตรวจสอบข้อมูล (สัปดาห์ 9-10)",
+      "bullets": [
+        "องค์ประกอบฟอร์ม: form, label, input (text/email/radio/checkbox), textarea, select, button",
+        "การตรวจสอบข้อมูลด้วย HTML attribute: required, pattern, min/max, minlength/maxlength",
+        "ความแตกต่างระหว่าง client-side validation กับ server-side validation"
+      ]
+    },
+    {
+      "heading": "ทบทวนลิงก์และ JavaScript (สัปดาห์ 11-13)",
+      "bullets": [
+        "ลิงก์ภายใน (relative path) กับลิงก์ภายนอก (absolute path), target=\"_blank\", download, mailto:, tel:",
+        "พื้นฐาน JavaScript: let/const, console.log, document.getElementById/querySelector",
+        "Event และการโต้ตอบ: addEventListener('click', ...), if-else, การอ่านค่าจากฟอร์มด้วย .value"
+      ]
+    },
+    {
+      "heading": "ทบทวนการทดสอบและการนำเว็บไซต์ขึ้นออนไลน์ (สัปดาห์ 15-17)",
+      "bullets": [
+        "ขั้นตอนทดสอบเว็บไซต์: ตรวจลิงก์เสีย, ใช้ W3C Validator, ทดสอบบนมือถือจริง",
+        "วิธีอัพโหลดเว็บไซต์ขึ้น GitHub Pages: index.html ต้องอยู่ root, Settings > Pages",
+        "ภาพรวมโครงงานย่อย: การวางแผน sitemap, แบ่งงาน HTML→CSS→JS, และการนำเสนอผลงาน"
+      ]
+    },
+    {
+      "heading": "แนวข้อสอบและข้อแนะนำการเตรียมตัว",
+      "bullets": [
+        "ทบทวนความแตกต่างของแท็กที่คล้ายกัน เช่น section กับ div, id กับ class",
+        "ฝึกเขียนโครงสร้าง HTML เปล่า ๆ ให้ถูกต้องโดยไม่ดูตัวอย่าง",
+        "ลองอธิบายด้วยคำพูดของตัวเองว่า media query และ flexbox ทำงานอย่างไร",
+        "ทวนคำสั่ง JavaScript พื้นฐานที่ใช้บ่อย เช่น getElementById, addEventListener, if-else"
+      ]
+    }
+  ]
+}
